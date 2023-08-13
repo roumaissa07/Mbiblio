@@ -1,0 +1,507 @@
+@import url();
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+
+.welcome h1 {
+    text-decoration: none;
+    background-color: transparent;
+    padding: 50px;
+    position: absolute;
+    top: 40%;
+    color: #fff;
+    
+
+}
+
+.welcome .span1{
+    text-decoration: none;
+    background-color: transparent;
+    padding-left: 150px;
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: 35px;
+    justify-content: center;
+    
+
+}
+
+
+
+
+.ribbon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.69);
+    display: none;
+  }
+  
+  .ribbon.show {
+    display: block;
+  }
+  
+
+.header{
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    font-weight: 700;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: rgba(0, 0px, 0px, 0.7);
+    pointer-events: none;
+}
+
+
+
+.logo span{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+.navbar a{
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 40px;
+    border: 5px solid transparent;
+    transition: 0.6s ease;
+}
+
+.navbar a:hover{
+    background: #fff;
+    color: #000;
+}
+
+.btnlogin-popup{
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.btnlogin-popup::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: white;
+    opacity: .85;
+    
+}
+
+.section{
+    min-height: 100vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.208), rgba(0, 0, 0, 0.6)), url(building-1727807.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper{
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 450px;
+   height: 100%;
+   background:transparent;
+   backdrop-filter: blur(15px);
+   box-shadow: -1px 0 10px rgba(0, 0, 0, .2);
+   border-left: 2px solid rgba(255, 255, 255, .1);
+   z-index: 100;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   padding: 0 40px;
+   opacity: 0;
+   pointer-events: none;
+}
+
+.wrapper.active-popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-close {
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 45px;
+   height: 45px;
+   background: #fff;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-bottom-left-radius: 10px;
+}
+
+.icon-close i {
+    font-size: 32px;
+    color: #222;
+}
+
+.wrapper .logreg-box{
+    width: 100%;
+
+}
+
+.wrapper .form-box.login {
+    display: block;
+}
+
+.wrapper.active .form-box.login {
+    display: none;
+}
+
+.wrapper .form-box.register {
+    display: none;
+}
+
+.wrapper.wrapper.active .form-box.register {
+    display: block;
+}
+
+.logreg-box .logreg-title{
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.logreg-title h2{
+    font-size: 32px; 
+}
+
+.logreg-title p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.logreg-box .input-box {
+   position: relative;
+   width: 100%;
+   height: 50px;
+   margin: 30px 0;
+   border-bottom: 2px solid white;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    padding-right: 25px
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+     top: -5px;
+
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%);
+    font-size: 19px;
+    color: white;
+}
+
+.logreg-box .remember-forgot {
+    font-size: 14.5px;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.logreg-box .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 600;
+}
+/* new pour aller à la 2eme page */
+.logreg-box .btn a{
+    text-decoration: none;
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.logreg-box .logreg-link {
+    font-size: 14.5px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 15px;
+
+}
+
+.logreg-link p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logreg-link p a:hover {
+    text-decoration: underline;
+}
+
+.media-options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.media-options a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.media-options a:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+.media-options a i {
+    font-size: 22px;
+    margin: 0 8px 1.5px 0;
+}
+
+.media-options a span {
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+/* le button de telechargement 
+.btndetelechargement {
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: 10px;
+    top: 50%;
+    height:30px;
+    background: white;
+    opacity: .85;
+    padding: 0px 20px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+  
+}
+
+.btndetelechargement a{
+    font-size: 15px;
+    text-decoration: none;   
+    font-weight: bold;
+    color: #000;
+}
+
+.btndetelechargement a i {
+    font-size: 18px;
+    margin: 0 8px 1.5px 0;
+}
+*/
+/* pour btn de service start */
+.butn{
+    text-decoration: none;
+    color: #ffffff;
+    content: '';
+    
+    left: 5%;
+    bottom: 10px;
+    top: 200%;
+    height:30px;
+    background: rgb(53, 53, 53);
+    opacity: .85;
+    padding: 4px 20px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    position: absolute;
+    margin-top: -370px;
+    margin-left: 600px;
+    
+    
+    
+}
+
+.butn a{
+    font-size: 15px;
+    text-decoration: none;   
+    font-weight: bold;
+    color: #000;
+    
+}
+/* pour btn de apropos end */
+
+.apropos .row{
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    flex-wrap: wrap;
+}
+
+.apropos .row .image img{
+    
+    flex:1 1 45rem ;
+    padding: 10px;
+    width: 570px;
+    
+}
+
+.apropos .row .image{
+    width: 200%; ;
+
+}
+
+.apropos .row .content{
+    flex:1 1 45rem ;
+    padding: 2rem;
+    height: 478px;
+    margin-top: -31%;
+    margin-left: 34%;
+    padding-left: 100PX;
+}
+
+.apropos .row .content h3{
+    font-size: 1.6rem;
+    color: rgb(5, 0, 0);
+    padding: 1rem 0;
+    line-height: 1.8 ;
+}
+
+.heading{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    padding-bottom: 2.5rem;
+    font-size: 4rem;
+    background-color: #ffffff;
+    margin-top: 50px;
+}
+
+.content{
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.338);
+}
+
+.content p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.content p.prg{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* en bas de la page */
+.footer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+  }
+  
+  .container {
+  overflow-x: hidden;
+}
+

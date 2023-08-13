@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=he, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style2eme.css"> -->
+    <link rel="stylesheet" type="text/css" href="style2eme.css">
+    
+    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo"><span>M</span> BIBLIO</a>
+    
+        <nav class="navbar">
+            <a href="#">ACCUEIL</a>
+            <a href="#">SERVICE</a>
+            <a href="#">BLOG</a>
+            <a href="#">A PROPOS DE NOUS</a>
+            <a href="#">CONTACT</a>
+            <button class="btnlogin-popup" onclick="window.location.href = 'index.html'">SE DÉCONNECTER</button>
+
+        </nav>
+      </header> 
+    
+    <div>
+        <div class="wrapper">
+            <div id="search-container">
+                <input type="search" id="search-input" placeholder="Recherchez le nom du produit ici...">
+                <button id="search">RECHERCHE</button> 
+            </div>
+            
+        </div>
+
+        <div id="ctgr">
+          Catégories
+        </div>
+
+        <div id="buttons">
+          <button class="button-value" onclick="filterProduct('all')">All</button>
+          <button class="button-value" onclick="filterProduct('Démolition')">Démolition, Gros ouvrage & Fondations</button>
+          <button class="button-value" onclick="filterProduct('Enveloppe')">Enveloppe en façade et en toiture</button>
+          <button class="button-value" onclick="filterProduct('Partitions')">Partitions internes et Mobiliers</button>
+          <button class="button-value" onclick="filterProduct('Équipement')">Équipement & dispositifs techniques</button>
+          <button class="button-value" onclick="filterProduct('Revêtements')">Revêtements et finitions</button>
+      </div>
+      <span id="products"></span>
+      
+
+        
+
+        <div>
+        <span span id="telech" class="positioned-bloc">
+            <button class="download-button" onclick="openModal()">
+                <span class="button-text">Télécharger</span>
+                <i class="bx bx-download"></i>
+              </button>
+
+        </span>
+        </div>
+
+        <div id="modal" class="modal">
+          
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="image-container">
+              <img class="porte-image" src="porte reel.jpg" alt="Porte" onclick="displayPorteInfo()">
+            </div>
+
+            
+            <div id="modal-info">
+                <h2>Information sur la porte</h2>
+                <p>Fournisseur :...</p>
+                <p>localisation :...</p>
+                <p>disponibilité :...</p>
+                
+                <p>couleur :...</p>
+                <p>caracteristiques :...</p>
+                <p>prix :...</p>
+              </div>
+              <h4>Dans quel format voulez-vous télécharger ce fichier ?</h4>
+              <div class="button-container">
+
+                <button onclick="downloadFile('ifc')" data-file="porte.ifc">
+                  <img class="icon" src="ifc.png" alt="ifc">
+                  <i id="icone-ifc" class="fas fa-file-download"  ></i>
+                </button>
+
+                <button onclick="downloadFile('revit')" data-file="Porte.rfa">
+                    <img class="icon" src="revit.jpg" alt="Revit">
+                    <i id="icone-revit" class="fas fa-file-download"  ></i>
+                  </button>
+
+                <button onclick="downloadFile('archicad')" data-file="porte.pln">
+                    <img class="icon" src="archicad.jpg" alt="Archicad">
+                    <i id="icone-archicad" class="fas fa-file-download" ></i>
+                </button>
+
+                <button  onclick="downloadFile('sketchup')" data-file="porte.skp">
+                  <img class="icon"  src="sketshup.jpg" alt="Sketchup">
+                  <i id="icone-sketchup" class="fas fa-file-download" ></i>
+
+                </button>
+
+                <button  onclick="downloadFile('3ds')" data-file="porte.3ds">
+                  <img class="icon"  src="3ds max.jpg" alt="3ds">
+                  <i id="icone-3ds" class="fas fa-file-download" ></i>
+
+                </button>
+
+                <button onclick="downloadFile('rhino')" data-file="porte.3dm">
+                  <img class="icon"  src="rhino.jpg" alt="Rhino">
+                  <i id="icone-rhino" class="fas fa-file-download" ></i>
+
+                </button>
+                <button onclick="downloadFile('autocad')" data-file="porte.dwg">
+                  <img class="icon" src="autocad.jpg" alt="AutoCAD">
+                  <i id="icone-autocad" class="fas fa-file-download" ></i>
+
+                </button>
+              </div>
+            </div>
+          </div>
+          
+
+          
+          
+    <script src="script2eme.js"></script>
+</body>
+</html> 
